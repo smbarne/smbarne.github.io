@@ -8,6 +8,8 @@ From this directory, run `python3 -m http.server 4173 --bind 127.0.0.1`, then op
 
 ## Connect the testing form
 
+The site is connected to [Lodestar Early Access](https://forms.gle/GLdfMWQAqNvqh9Y68). On November 3, 2026, a submission from the landing page using `lodestar-integration-test@example.com` reached Google's “Your response has been recorded” confirmation. This is a synthetic test response, not a tester to invite. Invalid email input was also checked and blocked by the browser. Follow the steps below if replacing the form.
+
 1. Create a Google Form named **Lodestar testing signup**. Add a required short-answer question named **Email address** with email-format validation. Use a normal question rather than Google's signed-in email collection.
 2. Explain that the address will be used for testing invitations. Set a confirmation message such as “Thanks for your interest in testing Lodestar. You’re on the list; a testing invitation will be sent separately.”
 3. Allow responses without Google sign-in: don't restrict to an organization, don't limit to one response, and don't require verified email collection. Publish the form for anyone with its link. Keep respondent-visible response summaries off.
