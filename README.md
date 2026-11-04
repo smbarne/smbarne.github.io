@@ -47,3 +47,4 @@ Replace with new captures as the app evolves. Screenshot source worktrees are in
 - `mac.jpg`: Mac factions browser captured from the running Lodestar app.
 
 - `iphone-duo.png`: iPhone Duo simulator outer display, showing the Rules screen.
+- `iphone-duo-open.png`: iPhone Duo simulator opened display, showing the Rules screen.
