@@ -337,13 +337,19 @@ h2 {
   grid-template-columns:repeat(4,minmax(0,1fr));
   gap:24px;
 }
+.feature {
+  display:flex;
+  flex-direction:column;
+}
+.feature-copy {
+  flex:1;
+}
 .number {
   font:11px ui-monospace,monospace;
   letter-spacing:.1em;
   color:var(--azure);
 }
 .feature h3 {
-  min-height: 54px;
   font-size:22px;
   letter-spacing:-.025em;
   margin:15px 0 12px;
@@ -351,7 +357,6 @@ h2 {
 .feature-copy p {
   color:var(--muted);
   font-size:14px;
-  min-height:116px;
   margin-bottom:30px;
 }
 .screen-link {
@@ -575,7 +580,6 @@ footer>p {
     padding:20px 15px 16px;
   }
   .feature-copy p {
-    min-height:120px;
   }
   .testing {
     gap:48px;
@@ -599,8 +603,6 @@ footer>p {
   .device-gallery {
     grid-template-columns: 1fr;
     gap: 40px;
-    max-width: 440px;
-    margin-inline: auto;
   }
   .device-image {
     height: auto;
@@ -716,8 +718,6 @@ footer>p {
   .features {
     grid-template-columns:1fr;
     gap:44px;
-    max-width:440px;
-    margin:auto;
   }
   .feature-copy p {
     min-height:0;
