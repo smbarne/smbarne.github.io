@@ -45,3 +45,5 @@ Brand SVGs come from Lodestar's `brand/` directory. All screenshots are actual a
 Replace with new captures as the app evolves. Screenshot source worktrees are in the Lodestar repository under `.claude/worktrees/`.
 
 - `mac.jpg`: Mac factions browser captured from the running Lodestar app.
+
+- `iphone-duo.png`: iPhone Duo simulator outer display, showing the Rules screen.
