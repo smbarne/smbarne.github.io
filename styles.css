@@ -767,3 +767,22 @@ footer>p {
     transition:none!important;
   }
 }
+
+/* Testing choices */
+.testing { grid-template-columns: 1fr; gap: 32px; padding-block: 72px; }
+.testing-copy h2 { margin-bottom: 14px; }
+.testing-copy > p:not(.eyebrow) { max-width: 700px; margin-bottom: 0; }
+.testing-options { display: grid; gap: 20px; }
+.platform-cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.platform-card { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 26px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); }
+.platform-card h3 { font-size: 21px; margin-bottom: 8px; }
+.platform-card p { font-size: 14px; color: var(--muted); margin-bottom: 18px; }
+.platform-card .small { font-size: 12px; margin: 14px 0 0; }
+.platform-card img { width: 120px; height: 120px; background: white; flex: 0 0 120px; }
+.signup-panel { max-width: none; }
+.signup-panel form { display: grid; grid-template-columns: 1fr auto; column-gap: 12px; }
+.signup-panel form label { grid-column: 1 / -1; }
+.signup-panel .button { width: auto; margin-top: 0; }
+.signup-panel noscript a { text-decoration: underline; }
+@media(max-width: 800px) { .platform-cards { grid-template-columns: 1fr; } }
+@media(max-width: 520px) { .platform-card { padding: 20px; gap: 12px; } .platform-card img { width: 96px; height: 96px; flex-basis: 96px; } .signup-panel form { grid-template-columns: 1fr; } .signup-panel .button { width: 100%; margin-top: 12px; } }

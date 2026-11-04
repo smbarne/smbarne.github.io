@@ -18,7 +18,7 @@ try {
     email.name = config.emailField;
     email.disabled = false;
     button.disabled = false;
-    status.textContent = "You’ll continue to Google Forms to confirm your signup.";
+    status.textContent = "Google Forms will confirm your request.";
   }
 } catch {
   // An unconfigured form must never collect email or claim a successful signup.
