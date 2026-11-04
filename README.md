@@ -34,4 +34,12 @@ The files use relative asset URLs and have no hosting-specific runtime. They can
 
 ## Assets
 
-Brand SVGs come from Lodestar's `brand/` directory. Screenshots are actual iPhone captures from the app-store asset work (`play-store-visual-assets-b32787/brand/app-store/raw-iphone/{list,unit,deployment}.png`). They are labeled as development screenshots on the page. Replace with new captures at the same dimensions as the app evolves.
+Brand SVGs come from Lodestar's `brand/` directory. All screenshots are actual app captures, labeled as development builds on the page. Each image links to its full-size file and retains its original aspect ratio.
+
+- `army-list.png`, `unit.png`: iPhone captures from `play-store-visual-assets-b32787/brand/app-store/raw-iphone/`.
+- `android-phone.png`: Android phone list from `play-store-visual-assets-b32787/brand/play-store/raw/list.png`.
+- `ipad.png`: iPad list from `play-store-visual-assets-b32787/brand/app-store/raw-ipad/list.png`.
+- `mission.png`, `deployment.png`: fresh November 3, 2026 captures on Store iPhone 17 Pro, built from iOS revision `d9d8de3` (deployment-distance work, matching the merged rules implementation). Shows Supply Drop in Standard mode and Acropolis with measured distances. Captured at 1206 × 2622 using `simctl io screenshot`.
+- `android-tablet.png`: fresh November 3, 2026 capture of Gauntlet with measured distances from Android revision `b331d56`. Generated on an isolated 2560 × 1600 Android 35 tablet using the existing `RulesGamePagesTest#deploymentIndexOpensAScaledMapAndCompleteSpokenKey` screenshot test, which passed. The test renders the production Rules screen and saves its Compose content; it omits system chrome.
+
+Replace with new captures as the app evolves. Screenshot source worktrees are in the Lodestar repository under `.claude/worktrees/`.

@@ -334,8 +334,8 @@ h2 {
 }
 .features {
   display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:42px;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:24px;
 }
 .number {
   font:11px ui-monospace,monospace;
@@ -343,6 +343,7 @@ h2 {
   color:var(--azure);
 }
 .feature h3 {
+  min-height: 54px;
   font-size:22px;
   letter-spacing:-.025em;
   margin:15px 0 12px;
@@ -350,12 +351,12 @@ h2 {
 .feature-copy p {
   color:var(--muted);
   font-size:14px;
-  min-height:94px;
+  min-height:116px;
   margin-bottom:30px;
 }
 .screen-link {
   display:block;
-  padding:28px 27px 18px;
+  padding:22px 16px 18px;
   background:linear-gradient(150deg,#16264c,#0d1733);
   border:1px solid #26345e;
   border-radius:12px;
@@ -385,6 +386,57 @@ h2 {
   font-size:11px;
   text-align:center;
   margin:24px 0 0;
+}
+.devices {
+  border-top: 1px solid var(--line);
+  padding-block: 80px;
+}
+.device-gallery {
+  display: grid;
+  grid-template-columns: .65fr 1fr 1.5fr;
+  gap: 28px;
+  align-items: end;
+}
+.device-card {
+  min-width: 0;
+  margin: 0;
+}
+.device-image {
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  height: 400px;
+  padding-bottom: 24px;
+}
+.device-image img {
+  width: auto;
+  max-height: 100%;
+  border: 4px solid #26345e;
+  border-radius: 16px;
+  box-shadow: 0 15px 35px #0005;
+  transition: border-color .2s;
+}
+.device-image:hover img {
+  border-color: var(--azure);
+}
+.device-card figcaption {
+  border-top: 1px solid var(--line);
+  padding-top: 20px;
+}
+.device-card h3 {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+.device-card h3 span {
+  color: var(--azure);
+}
+.device-card p {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 0;
 }
 .testing {
   border-top:1px solid var(--line);
@@ -516,7 +568,8 @@ footer>p {
     gap:20px;
   }
   .features {
-    gap:22px;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:36px;
   }
   .screen-link {
     padding:20px 15px 16px;
@@ -540,6 +593,21 @@ footer>p {
   }
 }
 @media(max-width:700px) {
+  .devices {
+    padding-block: 58px;
+  }
+  .device-gallery {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    max-width: 440px;
+    margin-inline: auto;
+  }
+  .device-image {
+    height: auto;
+  }
+  .device-image img {
+    max-height: 480px;
+  }
   .wrap {
     width:calc(100% - 40px);
   }
@@ -656,6 +724,7 @@ footer>p {
     margin-bottom:22px;
   }
   .feature h3 {
+    min-height: 0;
     font-size:25px;
   }
   .screen-link {
