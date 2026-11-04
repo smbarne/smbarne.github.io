@@ -1,0 +1,11 @@
+.git
+.github
+.wrangler
+node_modules
+scripts
+README.md
+CNAME
+.nojekyll
+wrangler.jsonc
+package.json
+package-lock.json
