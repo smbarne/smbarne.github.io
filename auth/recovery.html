@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; base-uri 'none'; form-action 'none'">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Return to Lodestar</title>
+  <link rel="stylesheet" href="auth.css">
+  <script type="module" src="auth-page.mjs"></script>
+</head>
+<body data-mode="recovery">
+  <header><a href="https://lodestartabletop.com/">Lodestar</a></header>
+  <main>
+    <p class="eyebrow">Your Lodestar account</p>
+    <h1>Return to Lodestar</h1>
+    <p id="message" role="status">Checking your link…</p>
+    <button class="action" id="continue" hidden>Continue</button>
+    <a class="action" id="open-app" hidden>Open Lodestar</a>
+    <noscript><p>Enable JavaScript to continue safely, or request another link from Lodestar.</p></noscript>
+    <p class="help">Lodestar needs to be installed, and this device needs the app version that supports accounts. If the app doesn’t open, <a href="https://lodestartabletop.com/">visit the Lodestar website</a> for access to the current build.</p>
+  </main>
+  <footer><a href="https://lodestartabletop.com/lodestar-privacy.html">Privacy</a></footer>
+</body>
+</html>

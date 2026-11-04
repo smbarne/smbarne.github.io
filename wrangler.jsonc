@@ -1,0 +1,7 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "smbarne-github-io",
+  "compatibility_date": "2026-11-04",
+  "assets": { "directory": "." },
+  "previews": {}
+}
