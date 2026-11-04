@@ -22,7 +22,7 @@ export function resolveAuthPage(mode, rawURL) {
   }
   if (!['callback', 'recovery'].includes(mode) || url.hash) return failure;
   if (!unique(url.searchParams, ['code', 'error', 'error_code', 'error_description'])) return failure;
-  if (url.searchParams.has('error') || url.searchParams.has('error_code')) return failure;
+  if (['error', 'error_code', 'error_description'].some(key => url.searchParams.has(key))) return failure;
   const code = url.searchParams.get('code') ?? '';
   if (!/^[a-z0-9_-]{1,2048}$/i.test(code)) return failure;
   const target = new URL(`com.smbarne.lodestar://auth/${mode}`);
