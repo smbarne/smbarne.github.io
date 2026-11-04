@@ -43,3 +43,5 @@ Brand SVGs come from Lodestar's `brand/` directory. All screenshots are actual a
 - `android-tablet.png`: fresh November 3, 2026 capture of Gauntlet with measured distances from Android revision `b331d56`. Generated on an isolated 2560 × 1600 Android 35 tablet using the existing `RulesGamePagesTest#deploymentIndexOpensAScaledMapAndCompleteSpokenKey` screenshot test, which passed. The test renders the production Rules screen and saves its Compose content; it omits system chrome.
 
 Replace with new captures as the app evolves. Screenshot source worktrees are in the Lodestar repository under `.claude/worktrees/`.
+
+- `mac.jpg`: Mac factions browser captured from the running Lodestar app.
