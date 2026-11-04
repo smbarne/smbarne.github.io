@@ -7,10 +7,44 @@
   --azure:#5fa8ff;
   --gold:#ffc94d;
   --line:#26345e;
+  --gold-text:#ffc94d;
+  --border-strong:#4a5679;
+  --faint:#8998bb;
+  --glow:#203d8d80;
+  --orbit:#32457770;
+  --band:#0a122b;
+  --card-a:#16264c;
+  --card-b:#0d1733;
+  --shadow:#0005;
+  --wordmark-filter:brightness(0) invert(1);
   font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
   color:var(--text);
   background:var(--bg);
   font-synthesis:none;
+}
+
+/* Light mode follows the device. Phone frames and screenshots stay dark, as
+   the app's captures are. Gold as text darkens to keep its contrast on white. */
+@media (prefers-color-scheme: light) {
+  :root {
+    color-scheme:light;
+    --bg:#f5f7fc;
+    --surface:#ffffff;
+    --text:#0b1433;
+    --muted:#4a5679;
+    --azure:#2f5bea;
+    --gold-text:#946200;
+    --line:#d5ddee;
+    --border-strong:#b7c2da;
+    --faint:#5c6a8c;
+    --glow:#5fa8ff33;
+    --orbit:#9fb0d470;
+    --band:#eaeff9;
+    --card-a:#ffffff;
+    --card-b:#eef2fb;
+    --shadow:#0b143326;
+    --wordmark-filter:none;
+  }
 }
 * {
   box-sizing:border-box;
@@ -33,7 +67,7 @@ button,a,input {
   -webkit-tap-highlight-color:transparent;
 }
 a:focus-visible,button:focus-visible,input:focus-visible {
-  outline:3px solid var(--gold);
+  outline:3px solid var(--gold-text);
   outline-offset:6px;
 }
 img {
@@ -77,7 +111,7 @@ h1,h2,h3,p {
 }
 .wordmark {
   width:154px;
-  filter:brightness(0) invert(1);
+  filter:var(--wordmark-filter);
 }
 nav {
   display:flex;
@@ -87,16 +121,16 @@ nav {
   font-weight:600;
 }
 .nav-cta {
-  border:1px solid #4a5679;
+  border:1px solid var(--border-strong);
   padding:12px 18px;
   border-radius:6px;
 }
 .nav-cta span {
   margin-left:16px;
-  color:var(--gold);
+  color:var(--gold-text);
 }
 nav a:hover,.text-link:hover,footer a:hover {
-  color:var(--gold);
+  color:var(--gold-text);
 }
 .hero {
   display:grid;
@@ -130,7 +164,7 @@ h1 {
   margin-bottom:27px;
 }
 h1 span {
-  color:var(--gold);
+  color:var(--gold-text);
 }
 .intro {
   font-size:23px;
@@ -189,7 +223,7 @@ h1 span {
 }
 .platforms span {
   padding-inline:10px;
-  color:#586688;
+  color:var(--faint);
 }
 .hero-art {
   position:relative;
@@ -203,7 +237,7 @@ h1 span {
   content:"";
   position:absolute;
   inset:20% -10% 5%;
-  background:radial-gradient(ellipse,#203d8d80,transparent 68%);
+  background:radial-gradient(ellipse,var(--glow),transparent 68%);
   z-index:-2;
 }
 .phone {
@@ -237,7 +271,7 @@ h1 span {
 }
 .orbit {
   position:absolute;
-  border:1px solid #32457770;
+  border:1px solid var(--orbit);
   width:490px;
   height:490px;
   border-radius:50%;
@@ -252,12 +286,12 @@ h1 span {
   position:absolute;
   top:70px;
   right:61px;
-  color:var(--gold);
+  color:var(--gold-text);
   font-size:26px;
 }
 .coordinate {
   position:absolute;
-  color:#7e8bad;
+  color:var(--faint);
   font:10px ui-monospace,monospace;
   letter-spacing:.13em;
 }
@@ -283,7 +317,7 @@ h1 span {
 }
 .faction-strip {
   border-block:1px solid var(--line);
-  background:#0a122b;
+  background:var(--band);
 }
 .faction-strip .wrap {
   display:flex;
@@ -306,7 +340,7 @@ h1 span {
 }
 .star {
   font-size:13px;
-  color:var(--gold);
+  color:var(--gold-text);
 }
 .inside {
   padding-block:104px;
@@ -362,8 +396,8 @@ h2 {
 .screen-link {
   display:block;
   padding:22px 16px 18px;
-  background:linear-gradient(150deg,#16264c,#0d1733);
-  border:1px solid #26345e;
+  background:linear-gradient(150deg,var(--card-a),var(--card-b));
+  border:1px solid var(--line);
   border-radius:12px;
   transition:border-color .2s,transform .2s;
 }
@@ -374,7 +408,7 @@ h2 {
 .screen-link .phone {
   border-width:4px;
   border-radius:27px;
-  box-shadow:0 15px 35px #0005;
+  box-shadow:0 15px 35px var(--shadow);
 }
 .screen-link>span {
   display:flex;
@@ -387,7 +421,7 @@ h2 {
   color:var(--azure);
 }
 .screenshot-note {
-  color:#8998bb;
+  color:var(--faint);
   font-size:11px;
   text-align:center;
   margin:24px 0 0;
@@ -416,9 +450,9 @@ h2 {
 .device-image img {
   width: auto;
   max-height: 100%;
-  border: 4px solid #26345e;
+  border: 4px solid var(--line);
   border-radius: 16px;
-  box-shadow: 0 15px 35px #0005;
+  box-shadow: 0 15px 35px var(--shadow);
   transition: border-color .2s;
 }
 .device-image:hover img {
@@ -455,7 +489,7 @@ h2 {
   margin-bottom:24px;
 }
 .testing h2 span {
-  color:var(--gold);
+  color:var(--gold-text);
 }
 .testing-copy>p:not(.eyebrow) {
   color:var(--muted);
@@ -494,14 +528,14 @@ label {
 input {
   width:100%;
   padding:16px;
-  border:1px solid #526080;
+  border:1px solid var(--border-strong);
   border-radius:6px;
   background:var(--bg);
   color:var(--text);
   min-height:52px;
 }
 input::placeholder {
-  color:#8e9cbd;
+  color:var(--faint);
 }
 .signup-panel .button {
   width:100%;
@@ -518,7 +552,7 @@ input:disabled {
   margin:18px 0 0;
 }
 .form-status {
-  color:var(--gold);
+  color:var(--gold-text);
   margin:16px 0 0;
 }
 footer {
@@ -539,7 +573,7 @@ footer {
 }
 footer>p {
   font-size:11px;
-  color:#8998bb;
+  color:var(--faint);
   max-width:690px;
   margin:0;
 }
@@ -619,7 +653,7 @@ footer>p {
   .brand {
     gap:8px;
   }
-  .site-header .brand>img:first-child {
+  .site-header .brand>picture>img {
     width:32px;
   }
   .wordmark {
