@@ -1,5 +1,18 @@
 "use strict";
 
+// Screenshot links open the full-size image in the visitor's colour scheme.
+// The light file stays in the markup as the no-JavaScript default.
+const darkQuery = window.matchMedia("(prefers-color-scheme: dark)");
+const screenshotLinks = document.querySelectorAll("a[data-dark-href]");
+for (const link of screenshotLinks) link.dataset.lightHref = link.getAttribute("href");
+function syncScreenshotLinks() {
+  for (const link of screenshotLinks) {
+    link.setAttribute("href", darkQuery.matches ? link.dataset.darkHref : link.dataset.lightHref);
+  }
+}
+syncScreenshotLinks();
+darkQuery.addEventListener("change", syncScreenshotLinks);
+
 const form = document.querySelector("#signup-form");
 const email = document.querySelector("#email");
 const button = form.querySelector("button");

@@ -247,6 +247,10 @@ h1 span {
   overflow:hidden;
   box-shadow:0 0 0 1px #52608066,0 25px 70px #0005;
 }
+.phone picture,
+.device-image picture {
+  display:contents;
+}
 .phone img {
   width:100%;
   height:auto;
