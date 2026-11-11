@@ -878,3 +878,10 @@ footer>p {
 footer>p.copyright {
   margin-top:10px;
 }
+.community-card { display: flex; align-items: center; gap: 22px; padding: 26px; border: 1px solid var(--line); border-radius: 12px; background: linear-gradient(135deg, #5865f21f, transparent 60%), var(--surface); }
+.community-card>div { flex: 1; min-width: 0; }
+.community-card h3 { font-size: 21px; margin-bottom: 6px; }
+.community-card p { font-size: 14px; color: var(--muted); }
+.community-icon { display: grid; place-items: center; flex: 0 0 56px; width: 56px; height: 56px; border-radius: 14px; background: #5865f2; color: #fff; }
+.community-card .button { flex: none; }
+@media(max-width: 640px) { .community-card { flex-wrap: wrap; padding: 20px; gap: 16px; } .community-card>div { flex-basis: calc(100% - 72px); } .community-card .button { width: 100%; } }
