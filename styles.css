@@ -824,3 +824,57 @@ footer>p {
 .signup-panel noscript a { text-decoration: underline; }
 @media(max-width: 800px) { .platform-cards { grid-template-columns: 1fr; } }
 @media(max-width: 520px) { .platform-card { padding: 20px; gap: 12px; } .platform-card img { width: 96px; height: 96px; flex-basis: 96px; } .signup-panel form { grid-template-columns: 1fr; } .signup-panel .button { width: 100%; margin-top: 12px; } }
+
+/* Support page */
+.footer-links {
+  display:flex;
+  gap:22px;
+}
+.support {
+  padding-block:72px 96px;
+  max-width:780px;
+  margin-inline:auto;
+}
+.support h1 {
+  font-size:clamp(40px,4.6vw,60px);
+}
+.support-lead {
+  color:var(--muted);
+  font-size:19px;
+  margin-bottom:56px;
+}
+.support h2 {
+  font-size:clamp(24px,2.4vw,30px);
+  margin-bottom:18px;
+}
+.support section {
+  margin-bottom:56px;
+}
+.support section p {
+  color:var(--muted);
+}
+.support .text-link {
+  color:var(--azure);
+  overflow-wrap:anywhere;
+}
+.support details {
+  border-top:1px solid var(--line);
+  padding-block:18px;
+}
+.support details:last-child {
+  border-bottom:1px solid var(--line);
+}
+.support summary {
+  cursor:pointer;
+  font-weight:650;
+  font-size:17px;
+}
+.support details p {
+  margin:12px 0 0;
+}
+.support-links {
+  font-size:14px;
+}
+footer>p.copyright {
+  margin-top:10px;
+}
