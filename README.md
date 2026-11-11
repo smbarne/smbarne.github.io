@@ -47,4 +47,4 @@ Replace with new captures as the app evolves. Screenshot source worktrees are in
 - `mac.jpg`: Mac factions browser captured from the running Lodestar app.
 
 - `iphone-duo.png`: iPhone Duo simulator outer display, showing the Rules screen.
-- `iphone-duo-open.png`: iPhone Duo simulator opened display, showing the Rules screen.
+- `iphone-duo-open.png`, `iphone-duo-open-dark.png`: iPhone Duo simulator opened (inner) display, showing the Rules screen in light and dark, captured November 10, 2026 from the Beacon build with `simctl io <device> screenshot --display=<inner display UUID>` (2853 × 2007). Dark was switched with `simctl ui <device> appearance dark`.
