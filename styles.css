@@ -875,6 +875,34 @@ footer>p {
 .support-links {
   font-size:14px;
 }
+
+/* Privacy policy: the support page's layout, with running prose */
+.legal h2 {
+  margin-top:48px;
+  scroll-margin-top:24px;
+}
+.legal h3 {
+  font-size:19px;
+  margin:28px 0 10px;
+  scroll-margin-top:24px;
+}
+.legal p,
+.legal li {
+  color:var(--muted);
+}
+.legal ul {
+  padding-left:22px;
+  margin:0 0 16px;
+}
+.legal li {
+  margin-bottom:8px;
+}
+.legal strong {
+  color:var(--text);
+}
+.legal .support-links {
+  margin-top:56px;
+}
 footer>p.copyright {
   margin-top:10px;
 }
