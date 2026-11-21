@@ -34,17 +34,22 @@ The files use relative asset URLs and have no hosting-specific runtime. They can
 
 ## Assets
 
-Brand SVGs come from Lodestar's `brand/` directory. All screenshots are actual app captures, labeled as development builds on the page. Each image links to its full-size file and retains its original aspect ratio.
+Brand SVGs come from Lodestar's `brand/` directory. Screenshots are actual captures from development builds, with matching light and dark variants and full-size links.
 
-- `army-list.png`, `unit.png`: iPhone captures from `play-store-visual-assets-b32787/brand/app-store/raw-iphone/`.
-- `android-phone.png`: Android phone list from `play-store-visual-assets-b32787/brand/play-store/raw/list.png`.
-- `ipad.png`: iPad list from `play-store-visual-assets-b32787/brand/app-store/raw-ipad/list.png`.
-- `mission.png`, `deployment.png`: fresh November 3, 2026 captures on Store iPhone 17 Pro, built from iOS revision `d9d8de3` (deployment-distance work, matching the merged rules implementation). Shows Supply Drop in Standard mode and Acropolis with measured distances. Captured at 1206 × 2622 using `simctl io screenshot`.
-- `android-tablet.png`: fresh November 3, 2026 capture of Gauntlet with measured distances from Android revision `b331d56`. Generated on an isolated 2560 × 1600 Android 35 tablet using the existing `RulesGamePagesTest#deploymentIndexOpensAScaledMapAndCompleteSpokenKey` screenshot test, which passed. The test renders the production Rules screen and saves its Compose content; it omits system chrome.
+The November 21, 2026 refresh uses Lodestar `origin/main` at `d1910c91`, with its existing RootView lint fixes applied in an isolated capture worktree. The visionOS build also uses a regular-material fallback for the pinned sidebar card because Liquid Glass is unavailable there.
 
-Replace with new captures as the app evolves. Screenshot source worktrees are in the Lodestar repository under `.claude/worktrees/`.
+| Website files (light and `-dark` variants) | Source | Dimensions |
+| --- | --- | --- |
+| `army-list.png`, `unit.png`, `mission.png`, `deployment.png` | `brand/app-store/raw-iphone-light/` and `raw-iphone/` | 1206 × 2622 |
+| `ipad.png` | `brand/app-store/raw-ipad-light/list.png` and `raw-ipad/list.png` | 2064 × 2752 |
+| `android-phone.png` | `android/app/src/test/screenshots/list-view-phone-{light,dark}.png` | 616 × 1371 |
+| `android-tablet.png` | `android/app/src/test/screenshots/list-view-tablet-{light,dark}.png` | 1280 × 800 |
+| `vision-pro.png` | `brand/app-store/raw-vision-light/factions.png` and `raw-vision/factions.png` | 3840 × 2160 |
 
-- `mac.jpg`: Mac factions browser captured from the running Lodestar app.
+The iPhone and iPad sources come from both passing appearance runs of `StoreScreenshotUITests`, invoked by `brand/capture-apple.sh`. The army is Raynor's Raiders (Standard), with Jim Raynor, Marauder, Raynor's Raider and Medic. The unit reference is Marauder, the mission is Supply Drop (Standard), and the deployment is Acropolis.
 
-- `iphone-duo.png`: iPhone Duo simulator outer display, showing the Rules screen.
-- `iphone-duo-open.png`, `iphone-duo-open-dark.png`: iPhone Duo simulator opened (inner) display, showing the Rules screen in light and dark, captured November 10, 2026 from the Beacon build with `simctl io <device> screenshot --display=<inner display UUID>` (2853 × 2007). Dark was switched with `simctl ui <device> appearance dark`.
+Android images come from the passing parameterized `ScreenshotTest.listInViewMode` fixture. They render production Compose content without system chrome. Google Play and TestFlight beta links remain available.
+
+The dark Mac faction browser was recaptured after the Mac chrome fixes, at 2880 × 1800. The light Mac image remains the existing 3194 × 1606 capture from the earlier website version.
+
+The iPhone Duo pairs were captured November 21 with `simctl io screenshot --display=<display UUID>` from the current build: the closed outer display in landscape at 2034 × 1398, and the opened inner display at 2853 × 2007. Both show the Rules browser. XCTest screenshots are not used for these because they can return the inactive outer display.
