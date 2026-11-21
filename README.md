@@ -50,6 +50,6 @@ The iPhone and iPad sources come from both passing appearance runs of `StoreScre
 
 Android images come from the passing parameterized `ScreenshotTest.listInViewMode` fixture. They render production Compose content without system chrome. Google Play and TestFlight beta links remain available.
 
-The dark Mac faction browser was recaptured after the Mac chrome fixes, at 2880 × 1800. The light Mac image remains the existing 3194 × 1606 capture from the earlier website version.
+Both Mac faction browser images were recaptured after the Mac chrome fixes, with Marauder open in the inspector. The dark window capture is 2880 × 1800; the light window capture is 2640 × 1168, matching the available window size at capture time. Sources are `brand/app-store/raw-mac/factions.png` and `raw-mac-light/factions.png`. The page declares each source’s intrinsic dimensions.
 
 The iPhone Duo pairs were captured November 21 with `simctl io screenshot --display=<display UUID>` from the current build: the closed outer display in landscape at 2034 × 1398, and the opened inner display at 2853 × 2007. Both show the Rules browser. XCTest screenshots are not used for these because they can return the inactive outer display.
