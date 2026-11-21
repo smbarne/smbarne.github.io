@@ -1,6 +1,6 @@
 # Lodestar landing page
 
-Static HTML, CSS, and JavaScript for `smbarne.github.io`. No build step, package install, analytics, or hosting subscription required. The existing `lodestar-privacy.html` is preserved.
+Static HTML, CSS, and JavaScript for `smbarne.github.io`. No build step, package install, or hosting subscription required. Page views (and a `Signup Submitted` event, without the email address) go to Mixpanel via `analytics.js`; it is off for Do Not Track / Global Privacy Control and on localhost. The existing `lodestar-privacy.html` is preserved.
 
 ## Preview
 

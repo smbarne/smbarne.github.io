@@ -39,6 +39,7 @@ try {
 
 form.addEventListener("submit", (event) => {
   if (!ready) event.preventDefault();
+  else window.lodestarTrack?.("Signup Submitted"); // never includes the address
   // Use a normal browser POST. Google handles validation and confirmation;
   // there is no opaque cross-origin fetch or speculative success message.
 });
