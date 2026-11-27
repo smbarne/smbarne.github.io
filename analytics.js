@@ -11,22 +11,47 @@ const isLocal = ["localhost", "127.0.0.1", ""].includes(location.hostname);
 window.lodestarTrack = () => {};
 
 if (!optedOut && !isLocal) {
+  installMixpanelStub();
+  window.mixpanel.init(MIXPANEL_TOKEN, {
+    autocapture: false,
+    track_pageview: true,
+    persistence: "localStorage",
+    record_sessions_percent: 0,
+    ignore_dnt: false,
+  });
+  // Calls made before the library arrives are queued by the stub and replayed.
+  // sendBeacon lets the event survive clicks that leave the page.
+  window.lodestarTrack = (name, props) => window.mixpanel.track(name, props, { transport: "sendBeacon" });
+  trackSectionViews();
+}
+
+// mixpanel-2-latest.min.js is Mixpanel's "snippet" build: it does nothing unless
+// window.mixpanel is already the loader stub from Mixpanel's install snippet.
+// This is that stub, written out readably. It records calls in arrays, then the
+// library replays them and replaces window.mixpanel with the real instance.
+function installMixpanelStub() {
+  if (window.mixpanel?.__SV) return;
+  const methods = ("disable time_event track track_pageview track_links track_forms register register_once " +
+    "alias unregister identify name_tag set_config reset opt_in_tracking opt_out_tracking " +
+    "has_opted_in_tracking has_opted_out_tracking clear_opt_in_out_tracking " +
+    "people.set people.set_once people.unset people.increment people.append people.union people.remove").split(" ");
+  const mixpanel = (window.mixpanel = []);
+  mixpanel._i = [];
+  mixpanel.init = (token, config, name) => {
+    const target = name === undefined ? mixpanel : (mixpanel[name] = []);
+    target.people = target.people || [];
+    for (const method of methods) {
+      const [first, second] = method.split(".");
+      const owner = second ? target[first] : target;
+      const fn = second || first;
+      owner[fn] = (...args) => { owner.push([fn, ...args]); };
+    }
+    mixpanel._i.push([token, config, name ?? "mixpanel"]);
+  };
+  mixpanel.__SV = 1.2;
   const script = document.createElement("script");
   script.src = "https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";
   script.async = true;
-  script.onload = () => {
-    if (!window.mixpanel) return;
-    window.mixpanel.init(MIXPANEL_TOKEN, {
-      autocapture: false,
-      track_pageview: true,
-      persistence: "localStorage",
-      record_sessions_percent: 0,
-      ignore_dnt: false,
-    });
-    // sendBeacon lets the event survive clicks that leave the page.
-    window.lodestarTrack = (name, props) => window.mixpanel.track(name, props, { transport: "sendBeacon" });
-    trackSectionViews();
-  };
   document.head.appendChild(script);
 }
 
